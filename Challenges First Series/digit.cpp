@@ -2,21 +2,30 @@
 #include <string>
 
 //a function that reverses an integer number
-int reversDigits(int num) 
-{ 
-    int rev_num = 0; 
-    while (num > 0) 
-    { 
-        rev_num = rev_num*10 + num%10; 
-        num = num/10; 
-    } 
-    return rev_num; 
-} 
+//long reversDigits(long num) 
+//{ 
+//    long rev_num = 0; 
+//    while (num > 0) 
+//    { 
+//        rev_num = rev_num*10 + num%10; 
+//        num = num/10; 
+//    } 
+//    return rev_num; 
+//} 
+
+long appendDigit(long base, long append) {
+   std::string sBase = std::to_string(base);
+   std::string sAppend = std::to_string(append);
+   std::string result = sBase + sAppend;
+   return std::stol(result);
+
+}
 
 int main()
 {
 
-    int a, b = 0, c;
+    int a, c;
+    long b = 0;
 	//a is the input number
 	//b is the output number
 	//c is the remainder counter
@@ -45,7 +54,8 @@ int main()
             {
 				//b will be the biggest number, which the product of it's digits are equal to the input number.
 				//therefore, it should be reversed
-                b = (b*10)+i;
+                //b = (b*10)+i;
+                b = appendDigit(i, b);
                 a = a/i;
                 c = a%i;
             }
@@ -61,15 +71,15 @@ int main()
 			// reverse integer 
 			//now we use the function
 			
-              //  int reversedNumber = 0, r;
-              //  while(b != 0)
-              //  {
-              //      r = b%10;
-              //      reversedNumber = reversedNumber*10 + r;
-              //      b /= 10;
-              //  }
+               //long reversedNumber = 0, r;
+                //while(b != 0)
+                //{
+                //    r = b%10;
+               //     reversedNumber = reversedNumber*10 + r;
+              //     b /= 10;
+              // }
               
-              std::cout << reversDigits(b);
+              std::cout << b/10;
         }
     }
   
