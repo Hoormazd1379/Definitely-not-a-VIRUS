@@ -1,4 +1,4 @@
-n = input()
+n = int(input())
 
 if n < 10:
     print(n)
@@ -36,7 +36,8 @@ while index < len(digits)-1:
         index += 1
 
 digits.sort()
-digits = int(''.join(str(i) for i in digits))
+digits = ''.join(str(i) for i in digits)
+digits = int(digits)
 
 if maybe_prime == False:
     print(digits)
