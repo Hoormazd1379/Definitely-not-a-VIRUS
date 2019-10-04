@@ -1,6 +1,17 @@
 #include <iostream>
 #include <string>
 
+int reversDigits(int num) 
+{ 
+    int rev_num = 0; 
+    while (num > 0) 
+    { 
+        rev_num = rev_num*10 + num%10; 
+        num = num/10; 
+    } 
+    return rev_num; 
+} 
+
 int main()
 {
     int a, b = 0, c;
@@ -32,15 +43,18 @@ int main()
         }
         else
         {
-                int reversedNumber = 0, r;
-                while(b != 0)
-                {
-                    r = b%10;
-                    reversedNumber = reversedNumber*10 + r;
-                    b /= 10;
-                }
-                std::cout << reversedNumber;
+              //  int reversedNumber = 0, r;
+              //  while(b != 0)
+              //  {
+              //      r = b%10;
+              //      reversedNumber = reversedNumber*10 + r;
+              //      b /= 10;
+              //  }
+              
+              std::cout << reversDigits(b);
         }
     }
   
 }
+
+
