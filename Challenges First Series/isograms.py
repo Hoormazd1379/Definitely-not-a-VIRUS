@@ -15,7 +15,7 @@ def check(word):
     for l in single_letter:
         num.append(letters.count(l))
         
-    if ((sum(num)/len(num))%num[0] == 0):
+    if ((sum(num)/len(num))/num[0] == 1):
         return "YES"
     else:
         return "NO"
